@@ -2048,9 +2048,10 @@ function loginUser() {
     }
 }
 
+
 function startQuiz() {
-    showQuestion();
-    startTimer();
+    document.getElementById("start-screen").style.display = "none";
+    document.getElementById("category-screen").style.display = "block";
 }
 function updateProgressBar() {
     const progressBar = document.getElementById("progress-bar");
@@ -2168,16 +2169,15 @@ function showResult() {
 
     leaderboardList.innerHTML = "";
 
-    scores.slice(0, 5).forEach((score, index) => {
-        const li = document.createElement("li");
-        li.innerText = `Rank ${index + 1}: ${user.name} - ${user.score} points`;
-        leaderboardList.appendChild(li);
+   scores.slice(0, 5).forEach((user, index) => {
+    const li = document.createElement("li");
+    li.innerText = `Rank ${index + 1}: ${user.name} - ${user.score} points`;
+    leaderboardList.appendChild(li);
     });
 }
 restartButton.addEventListener("click", () => {
     location.reload();
-});
-
+})
 function startCategoryQuiz(category) {
     let allQuestions = quizData[category];
 
@@ -2185,13 +2185,14 @@ function startCategoryQuiz(category) {
         .sort(() => Math.random() - 0.5)
         .slice(0, 10);
 
-    startScreen.style.display = "none";
-    quizScreen.style.display = "block";
+    document.getElementById("category-screen").style.display = "none";
+    document.getElementById("quiz-screen").style.display = "block";
 
     currentQuestionIndex = 0;
     score = 0;
 
-    startQuiz();
+    showQuestion();
+    startTimer();
 }
 certificateButton.addEventListener("click", () => {
     window.open("certificate.html", "_blank");
