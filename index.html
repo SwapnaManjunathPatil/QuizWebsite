@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="auth-container">
+        <h2>Quiz Website</h2>
+
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+
+        <button onclick="registerUser()">Register</button>
+        <button onclick="loginUser()">Login</button>
+    </div>
+
+    <div id="start-screen" style="display:none;">
+        <h2>Welcome <span id="welcome-user"></span> 👋</h2>
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
 
     <div class="quiz-container">
 
@@ -25,6 +39,11 @@
 
         <div id="quiz-screen" style="display: none;">
             <h1>Simple Quiz Website</h1>
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <p id="progress-text">Question 1 of 10</p>
 
             <div id="timer">Time Left: 30s</div>
 
@@ -44,7 +63,7 @@
                 <div id="leaderboard" style="margin-top: 20px;">
                     <h3>Leaderboard</h3>
                     <ul id="leaderboard-list"></ul>
-<               /div>
+                </div>
             </div>
         </div>
 

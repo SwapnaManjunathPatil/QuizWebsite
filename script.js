@@ -2011,12 +2011,60 @@ let currentQuestionIndex = 0;
 let score = 0;
 let timeLeft = 30;
 let timer;
+let currentUser = "";
+let score = 0;
+let currentQuestionIndex = 0;
+
+function registerUser() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (!username || !password) {
+        alert("Please fill all fields");
+        return;
+    }
+
+    localStorage.setItem("quizUsername", username);
+    localStorage.setItem("quizPassword", password);
+
+    alert("Registration Successful!");
+}
+
+function loginUser() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    const savedUser = localStorage.getItem("quizUsername");
+    const savedPass = localStorage.getItem("quizPassword");
+
+    if (username === savedUser && password === savedPass) {
+        currentUser = username;
+
+        document.getElementById("auth-container").style.display = "none";
+        document.getElementById("start-screen").style.display = "block";
+        document.getElementById("welcome-user").innerText = username;
+    } else {
+        alert("Invalid Login Details");
+    }
+}
 
 function startQuiz() {
     showQuestion();
     startTimer();
 }
+function updateProgressBar() {
+    const progressBar = document.getElementById("progress-bar");
+    const progressText = document.getElementById("progress-text");
+
+    let progressPercent = ((currentQuestionIndex + 1) / questions.length) * 100;
+
+    progressBar.style.width = progressPercent + "%";
+
+    progressText.innerText =
+        `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+}
 function showQuestion() {
+    updateProgressBar();
     resetState();
 
     let currentQuestion = questions[currentQuestionIndex];
@@ -2100,14 +2148,21 @@ function showResult() {
 
     resultBox.style.display = "block";
     scoreText.innerText = `You scored ${score} out of ${questions.length}`;
+    const certificateName = currentUser || localStorage.getItem("quizUsername");
 
+    document.getElementById("certificate-name").innerText = certificateName;
     restartButton.style.display = "block";
     certificateButton.style.display = "block";
     let scores = JSON.parse(localStorage.getItem("quizScores")) || [];
 
-    scores.push(score);
+    const username = currentUser || localStorage.getItem("quizUsername");
 
-    scores.sort((a, b) => b - a);
+    scores.push({
+        name: username,
+        score: score
+    });
+
+    scores.sort((a, b) => b.score - a.score);
 
     localStorage.setItem("quizScores", JSON.stringify(scores));
 
@@ -2115,7 +2170,7 @@ function showResult() {
 
     scores.slice(0, 5).forEach((score, index) => {
         const li = document.createElement("li");
-        li.innerText = `Rank ${index + 1}: ${score} points`;
+        li.innerText = `Rank ${index + 1}: ${user.name} - ${user.score} points`;
         leaderboardList.appendChild(li);
     });
 }
