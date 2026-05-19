@@ -103,3 +103,17 @@ button:disabled {
     border-radius: 8px;
     font-weight: bold;
 }
+#start-screen,
+#category-screen,
+#quiz-screen {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    width: auto;
+}
+#category-screen {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
