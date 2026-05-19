@@ -2007,6 +2007,8 @@ const nextButton = document.getElementById("next-btn");
 const restartButton = document.getElementById("restart-btn");
 const timerElement = document.getElementById("timer");
 
+localStorage.removeItem("quizScores");
+
 let currentQuestionIndex = 0;
 let score = 0;
 let timeLeft = 30;
