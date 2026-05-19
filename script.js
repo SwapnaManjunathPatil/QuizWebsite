@@ -1997,7 +1997,7 @@ const quizData = {
 ]
 };
 const certificateButton = document.getElementById("certificate-btn");
-
+localStorage.clear();
 const leaderboardList = document.getElementById("leaderboard-list");
 const startButton = document.getElementById("start-btn");
 const startScreen = document.getElementById("start-screen");
