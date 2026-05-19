@@ -51,7 +51,7 @@
         <h1>Certificate of Achievement</h1>
 
         <p>This certificate is proudly presented to</p>
-
+        <h1 id="certificate-user"></h1>
         <div class="name">Quiz Participant</div>
 
         <p>for successfully completing the Smart Quiz Website Assessment</p>
@@ -62,6 +62,11 @@
 
         <p>Authorized Signature</p>
     </div>
+    <script>
+        const username = localStorage.getItem("certificateName");
+
+        document.getElementById("certificate-user").innerText = username;
+    </script>
 
 </body>
 </html>
