@@ -2050,8 +2050,33 @@ function loginUser() {
 
 
 function startQuiz() {
+
     document.getElementById("start-screen").style.display = "none";
-    document.getElementById("category-screen").style.display = "block";
+
+    const categoryScreen = document.getElementById("category-screen");
+
+    categoryScreen.style.display = "block";
+
+    categoryScreen.innerHTML = `
+        <h1>Welcome to Quiz Website</h1>
+        <h3>Select Quiz Category</h3>
+
+        <button class="category-btn" onclick="startCategoryQuiz('java')">
+            Java Quiz
+        </button>
+
+        <button class="category-btn" onclick="startCategoryQuiz('python')">
+            Python Quiz
+        </button>
+
+        <button class="category-btn" onclick="startCategoryQuiz('gk')">
+            GK Quiz
+        </button>
+
+        <button class="category-btn" onclick="startCategoryQuiz('aptitude')">
+            Aptitude Quiz
+        </button>
+    `;
 }
 function updateProgressBar() {
     const progressBar = document.getElementById("progress-bar");
