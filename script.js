@@ -2037,12 +2037,20 @@ function loginUser() {
     const savedPass = localStorage.getItem("quizPassword");
 
     if (username === savedUser && password === savedPass) {
+
         currentUser = username;
 
         document.getElementById("auth-container").style.display = "none";
-        document.getElementById("main-quiz-container").style.display = "block";
-        document.getElementById("start-screen").style.display = "flex";
+
+        const startScreen = document.getElementById("start-screen");
+
+        startScreen.style.display = "flex";
+        startScreen.style.flexDirection = "column";
+        startScreen.style.alignItems = "center";
+        startScreen.style.justifyContent = "center";
+
         document.getElementById("welcome-user").innerText = username;
+
     } else {
         alert("Invalid Login Details");
     }
