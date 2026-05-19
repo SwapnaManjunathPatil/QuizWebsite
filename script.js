@@ -2041,7 +2041,7 @@ function loginUser() {
 
         document.getElementById("auth-container").style.display = "none";
         document.getElementById("main-quiz-container").style.display = "block";
-        document.getElementById("start-screen").style.display = "block";
+        document.getElementById("start-screen").style.display = "flex";
         document.getElementById("welcome-user").innerText = username;
     } else {
         alert("Invalid Login Details");
@@ -2055,7 +2055,7 @@ function startQuiz() {
 
     const categoryScreen = document.getElementById("category-screen");
 
-    categoryScreen.style.display = "block";
+    categoryScreen.style.display = "flex";
 
     categoryScreen.innerHTML = `
         <h1>Welcome to Quiz Website</h1>

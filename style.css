@@ -119,20 +119,19 @@ button:disabled {
 }
 #start-screen,
 #category-screen {
-    position: fixed !important;
+    position: fixed;
 
-    top: 50% !important;
-    left: 50% !important;
+    top: 50%;
+    left: 50%;
 
-    transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%);
 
-    display: flex !important;
-    flex-direction: column !important;
+    flex-direction: column;
 
-    justify-content: center !important;
-    align-items: center !important;
+    justify-content: center;
+    align-items: center;
 
-    text-align: center !important;
+    text-align: center;
 
     gap: 20px;
 
