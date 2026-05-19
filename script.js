@@ -2040,6 +2040,7 @@ function loginUser() {
         currentUser = username;
 
         document.getElementById("auth-container").style.display = "none";
+        document.getElementById("main-quiz-container").style.display = "block";
         document.getElementById("start-screen").style.display = "block";
         document.getElementById("welcome-user").innerText = username;
     } else {
