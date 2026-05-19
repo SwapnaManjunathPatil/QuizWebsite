@@ -17,25 +17,35 @@
         <button onclick="loginUser()">Login</button>
     </div>
 
-    <div id="start-screen" style="display:none;">
-        <h2>Welcome <span id="welcome-user"></span> 👋</h2>
-        <button onclick="startQuiz()">Start Quiz</button>
-    </div>
+    <!-- Welcome Screen -->
+<div id="start-screen" style="display:none;">
+    <h2>Welcome <span id="welcome-user"></span> 👋</h2>
 
-    <div class="quiz-container" style="display:none;" id="main-quiz-container">
+    <button onclick="startQuiz()">Start Quiz</button>
+</div>
 
-         <div id="category-screen" style="display:none;">
-            <h1>Welcome to Quiz Website</h1>
-            <h3>Select Quiz Category</h3>
+<!-- Category Screen -->
+<div id="category-screen" style="display:none;">
+    <h1>Welcome to Quiz Website</h1>
 
-            <button class="category-btn" onclick="startCategoryQuiz('java')">Java Quiz</button>
+    <h3>Select Quiz Category</h3>
 
-            <button class="category-btn" onclick="startCategoryQuiz('python')">Python Quiz</button>
+    <button class="category-btn" onclick="startCategoryQuiz('java')">
+        Java Quiz
+    </button>
 
-             <button class="category-btn" onclick="startCategoryQuiz('gk')">GK Quiz</button>
+    <button class="category-btn" onclick="startCategoryQuiz('python')">
+        Python Quiz
+    </button>
 
-            <button class="category-btn" onclick="startCategoryQuiz('aptitude')">Aptitude Quiz</button>
-        </div>
+    <button class="category-btn" onclick="startCategoryQuiz('gk')">
+        GK Quiz
+    </button>
+
+    <button class="category-btn" onclick="startCategoryQuiz('aptitude')">
+        Aptitude Quiz
+    </button>
+</div>
 
         <div id="quiz-screen" style="display: none;">
             <h1>Simple Quiz Website</h1>
