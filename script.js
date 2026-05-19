@@ -2012,8 +2012,7 @@ let score = 0;
 let timeLeft = 30;
 let timer;
 let currentUser = "";
-let score = 0;
-let currentQuestionIndex = 0;
+
 
 function registerUser() {
     const username = document.getElementById("username").value;
@@ -2151,7 +2150,7 @@ function showResult() {
     scoreText.innerText = `You scored ${score} out of ${questions.length}`;
     const certificateName = currentUser || localStorage.getItem("quizUsername");
 
-    document.getElementById("certificate-name").innerText = certificateName;
+    localStorage.setItem("certificateName", certificateName);
     restartButton.style.display = "block";
     certificateButton.style.display = "block";
     let scores = JSON.parse(localStorage.getItem("quizScores")) || [];
