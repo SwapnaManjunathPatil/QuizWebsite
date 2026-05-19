@@ -14,12 +14,9 @@ body {
 }
 
 .quiz-container {
-    width: 600px;
-
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    text-align: center;
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
 }
 
 h1 {
