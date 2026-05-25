@@ -1,72 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Certificate</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f4f4f4;
-            text-align: center;
-            padding: 50px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate of Achievement</title>
 
-        .certificate {
-            background: white;
-            padding: 50px;
-            border: 10px solid #3498db;
-            border-radius: 20px;
-            max-width: 800px;
-            margin: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
+<style>
 
-        h1 {
-            color: #2c3e50;
-            font-size: 40px;
-        }
+body{
+    margin:0;
+    padding:20px;
+    background:#f2f2f2;
+    font-family:"Times New Roman", serif;
+}
 
-        h2 {
-            margin-top: 20px;
-            font-size: 30px;
-            color: #34495e;
-        }
+.certificate{
+    width:1000px;
+    margin:auto;
+    background:white;
+    border:12px solid #1f3c88;
+    padding:15px;
+}
 
-        p {
-            font-size: 20px;
-            margin: 20px 0;
-        }
+.inner-border{
+    border:2px solid black;
+    padding:25px;
+}
 
-        .name {
-            font-size: 32px;
-            font-weight: bold;
-            color: #27ae60;
-        }
-    </style>
+.header{
+    text-align:center;
+}
+
+.logo{
+    width:120px;
+    height:auto;
+}
+
+.college-name{
+    font-size:32px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.college-sub{
+    font-size:18px;
+    margin-top:5px;
+}
+
+.department{
+    margin-top:15px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.title{
+    text-align:center;
+    font-size:40px;
+    color:#1f3c88;
+    font-weight:bold;
+    margin-top:30px;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:22px;
+    margin-top:20px;
+}
+
+.student-name{
+    text-align:center;
+    font-size:34px;
+    font-weight:bold;
+    margin:20px auto;
+    width:60%;
+    border-bottom:2px solid black;
+    padding-bottom:8px;
+}
+
+.content{
+    text-align:center;
+    font-size:22px;
+    line-height:1.6;
+    margin-top:20px;
+}
+
+.date{
+    text-align:center;
+    margin-top:30px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.signature-area{
+    display:flex;
+    justify-content:space-between;
+    margin-top:50px;
+}
+
+.signature-box{
+    width:250px;
+    text-align:center;
+}
+
+.signature-img{
+    width:120px;
+    height:auto;
+}
+
+.sign-line{
+    border-top:1px solid black;
+    margin-top:5px;
+}
+
+.print-btn{
+    display:block;
+    margin:20px auto;
+    padding:10px 25px;
+    background:#1f3c88;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+@media print{
+    .print-btn{
+        display:none;
+    }
+
+    body{
+        background:white;
+    }
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="certificate">
-        <h1>Certificate of Achievement</h1>
+<button class="print-btn" onclick="window.print()">
+Download / Print Certificate
+</button>
 
-        <p>This certificate is proudly presented to</p>
-        <h1 id="certificate-user"></h1>
-        <div class="name">Quiz Participant</div>
+<div class="certificate">
 
-        <p>for successfully completing the Smart Quiz Website Assessment</p>
+<div class="inner-border">
 
-        <h2>🏆 Congratulations! 🏆</h2>
-        <h3 id="certificate-name"></h3>
-        <p>Date: May 2026</p>
+<div class="header">
 
-        <p>Authorized Signature</p>
-    </div>
-    <script>
-        const username = localStorage.getItem("certificateName");
+<img src="biet-logo.png" class="logo">
 
-        document.getElementById("certificate-user").innerText = username;
-    </script>
+<div class="college-name">
+BAPUJI INSTITUTE OF ENGINEERING AND TECHNOLOGY
+</div>
+
+<div class="college-sub">
+Davanagere - 577004
+</div>
+
+<div class="college-sub">
+An Autonomous Institute Affiliated to
+Visvesvaraya Technological University
+</div>
+
+<div class="department">
+Department of Artificial Intelligence & Machine Learning
+</div>
+
+</div>
+
+<div class="title">
+CERTIFICATE OF ACHIEVEMENT
+</div>
+
+<div class="subtitle">
+This is to certify that
+</div>
+
+<div id="student-name" class="student-name">
+Student Name
+</div>
+
+<div class="content">
+
+has successfully completed the
+
+<strong>Online Quiz Competition</strong>
+
+conducted by the Department of Artificial Intelligence & Machine Learning
+
+and demonstrated outstanding knowledge, dedication and performance.
+
+</div>
+
+<div class="date">
+Date of Completion:
+<span id="completion-date"></span>
+</div>
+
+<div class="signature-area">
+
+<div class="signature-box">
+
+<img src="faculty-sign.png" class="signature-img">
+
+<div class="sign-line"></div>
+
+<h3>Prof. Santhosh P</h3>
+
+<p>Faculty Coordinator</p>
+
+<p>Department of AI & ML</p>
+
+</div>
+
+<div class="signature-box">
+
+<img src="hod-sign.png" class="signature-img">
+
+<div class="sign-line"></div>
+
+<h3>Dr. S B Mallikarjun</h3>
+
+<p>Head of Department</p>
+
+<p>Department of AI & ML</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("student-name").innerText =
+localStorage.getItem("quizUsername") || "Student Name";
+
+document.getElementById("completion-date").innerText =
+new Date().toLocaleDateString("en-GB");
+
+</script>
 
 </body>
 </html>
