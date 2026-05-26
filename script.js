@@ -3833,6 +3833,7 @@ function loginUser() {
     if (username === savedUser && password === savedPass) {
 
         currentUser = username;
+        localStorage.setItem("quizUsername", username);
 
         document.getElementById("auth-container").style.display = "none";
 
@@ -3947,6 +3948,7 @@ function resetTimer() {
     startTimer();
 }
 function showResult() {
+    localStorage.setItem("quizScore", score);
     document.getElementById("question").style.display = "none";
     document.getElementById("answer-buttons").style.display = "none";
     nextButton.style.display = "none";
